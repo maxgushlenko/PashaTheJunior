@@ -8,6 +8,8 @@
 
 import UIKit
 
+let CustomCellIdentifier = "CustomCell"
+
 class CustomCell: UITableViewCell {
 
     @IBOutlet weak var thubnailImageView: UIImageView!
@@ -15,17 +17,11 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var capacityLabel: UILabel!
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        thubnailImageView.layer.cornerRadius = 30.0
+        thubnailImageView.clipsToBounds = true
     }
 
 }
