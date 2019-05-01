@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0E53C522797C500063E85A /* Belaz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E53C422797C500063E85A /* Belaz.swift */; };
+		0F0E53C722797E560063E85A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E53C622797E560063E85A /* DataManager.swift */; };
 		D2519A8522688A5000F3AB1B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2519A8422688A5000F3AB1B /* CustomCell.swift */; };
 		D279C92D22675A2E00653643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C92C22675A2E00653643 /* AppDelegate.swift */; };
 		D279C93222675A2E00653643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D279C93022675A2E00653643 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0E53C422797C500063E85A /* Belaz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Belaz.swift; sourceTree = "<group>"; };
+		0F0E53C622797E560063E85A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D2519A8422688A5000F3AB1B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D279C92922675A2E00653643 /* Belaz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Belaz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D279C92C22675A2E00653643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 				D279C93022675A2E00653643 /* Main.storyboard */,
 				D2519A8422688A5000F3AB1B /* CustomCell.swift */,
 				D279C93E22675AAC00653643 /* BelazTableViewController.swift */,
+				0F0E53C422797C500063E85A /* Belaz.swift */,
+				0F0E53C622797E560063E85A /* DataManager.swift */,
 				D279C93322675A2F00653643 /* Assets.xcassets */,
 				D279C93522675A2F00653643 /* LaunchScreen.storyboard */,
 				D279C93822675A2F00653643 /* Info.plist */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F0E53C522797C500063E85A /* Belaz.swift in Sources */,
+				0F0E53C722797E560063E85A /* DataManager.swift in Sources */,
 				D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */,
 				D2519A8522688A5000F3AB1B /* CustomCell.swift in Sources */,
 				D279C92D22675A2E00653643 /* AppDelegate.swift in Sources */,
