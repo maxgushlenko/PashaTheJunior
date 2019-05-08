@@ -12,8 +12,6 @@ class BelazTableViewController: UITableViewController {
 
     var belazes: [Belaz] = DataManager.shared.belazes
     
-//    var belazIsChoose = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]thubnailImageView.image = UIImage(named: belaz.image)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -71,7 +69,7 @@ class BelazTableViewController: UITableViewController {
         optionMenu.addAction(callAction)
         optionMenu.addAction(isChooseAction)
 
-        self.present(optionMenu, animated: true , completion: nil)
+//        self.present(optionMenu, animated: true , completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -100,10 +98,7 @@ class BelazTableViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destenationController = segue.destination as! DetailViewController
-                destenationController.belazImage = belazes[indexPath.row].imageName
-                destenationController.belazName = belazes[indexPath.row].name
-                destenationController.belazType = belazes[indexPath.row].type
-                destenationController.belazCapacity = String(belazes[indexPath.row].capacity)
+                destenationController.belaz = belazes[indexPath.row]
             }
         }
     }

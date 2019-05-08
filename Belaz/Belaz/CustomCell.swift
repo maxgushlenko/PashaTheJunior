@@ -38,7 +38,7 @@ class CustomCell: UITableViewCell {
         nameLabel.text = belaz.name
         typeLabel.text = belaz.type.rawValue
         capacityLabel.text = "\(belaz.capacity)"
-        thubnailImageView.image = UIImage(named: belaz.imageName)
+        thubnailImageView.image = belaz.image
     }
 
 }

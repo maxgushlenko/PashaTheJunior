@@ -15,20 +15,19 @@ class DetailViewController: UIViewController {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var capacityLabel: UILabel!
     
-    var belazImage = ""
-    var belazName = ""
-    var belazType = BelazType.disielYamz
-    var belazCapacity = ""
-
+    var belaz: Belaz?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        belazImageView.image = UIImage(named: belazImage)
-        nameLabel.text = belazName
-        typeLabel.text = belazType.rawValue
-        capacityLabel.text = belazCapacity
+        guard let belaz = belaz else { return }
+        
+        belazImageView.image = belaz.image
+        nameLabel.text = belaz.name
+        typeLabel.text = belaz.type.rawValue
+        capacityLabel.text = "\(belaz.capacity)"
     }
     
     
