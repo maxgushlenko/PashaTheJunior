@@ -23,16 +23,21 @@ enum BelazType: String {
 class Belaz: NSObject {
     
     var name = ""
-    var image: UIImage = UIImage()
+//    var image: UIImage = UIImage()
+    var imageName = ""
     var type: BelazType = .disielYamz
     var capacity: Int = 0
+    var isChoose = false
 
-    init(name: String, imageName: String, type: BelazType, capacity: Int) {
+    init(name: String, imageName: String, type: BelazType, capacity: Int, isChoose: Bool) {
         super.init()
 
         self.name = name
-        self.image = UIImage(named: imageName)!
+//        self.image = UIImage(named: image)!
+        self.imageName = imageName
         self.type = type
         self.capacity = capacity
+        self.isChoose = isChoose
     }
 }
+

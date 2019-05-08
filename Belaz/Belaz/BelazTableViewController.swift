@@ -12,7 +12,7 @@ class BelazTableViewController: UITableViewController {
 
     var belazes: [Belaz] = DataManager.shared.belazes
     
-    var belazIsChoose = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+//    var belazIsChoose = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]thubnailImageView.image = UIImage(named: belaz.image)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class BelazTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomCellIdentifier, for: indexPath) as! CustomCell
 
         cell.belaz = belazes[indexPath.row]
-        cell.accessoryType = belazIsChoose[indexPath.row] ? .checkmark : .none
+        cell.accessoryType = belazes[indexPath.row].isChoose ? .checkmark : .none
 
         return cell
     }
@@ -43,20 +43,20 @@ class BelazTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let isChooseTitle:String
         
-        isChooseTitle = belazIsChoose[indexPath.row] ? "Отмена" : "Выбрать"
+        isChooseTitle = belazes[indexPath.row].isChoose ? "Отмена" : "Выбрать"
         
         let isChooseAction = UIAlertAction(title: isChooseTitle, style: .default, handler: {
             (action: UIAlertAction!) -> Void in
             
             let cell = tableView.cellForRow(at: indexPath)
             
-            if self.belazIsChoose[indexPath.row] {
-                self.belazIsChoose[indexPath.row] = false
+            if self.belazes[indexPath.row].isChoose {
+                self.belazes[indexPath.row].isChoose = false
             } else {
-                self.belazIsChoose[indexPath.row] = true
+                self.belazes[indexPath.row].isChoose = true
             }
             
-            cell?.accessoryType = self.belazIsChoose[indexPath.row] ? .checkmark : .none
+            cell?.accessoryType = self.belazes[indexPath.row].isChoose ? .checkmark : .none
         })
         
         let callActionHandler = { (action: UIAlertAction!) -> Void in
@@ -95,4 +95,17 @@ class BelazTableViewController: UITableViewController {
         
         return [shareAction, deleteAction]
     }
+    
+    override func  prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destenationController = segue.destination as! DetailViewController
+                destenationController.belazImage = belazes[indexPath.row].imageName
+                destenationController.belazName = belazes[indexPath.row].name
+                destenationController.belazType = belazes[indexPath.row].type
+                destenationController.belazCapacity = String(belazes[indexPath.row].capacity)
+            }
+        }
+    }
+    
 }

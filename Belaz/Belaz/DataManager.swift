@@ -23,17 +23,20 @@ final class DataManager: NSObject {
     private func createBelazData() {
         belazes = []
 
-        let disielYamz = Belaz(name: "7540", imageName: "7540.jpg", type: .disielYamz, capacity: 20)
-        belazes.append(disielYamz)
+        let belaz7540 = Belaz(name: "7540", imageName: "7540.jpg", type: .disielYamz, capacity: 20, isChoose: false)
+        belazes.append(belaz7540)
 
-        let disielCummins = Belaz(name: "7544", imageName: "7544.jpg", type: .disielCummins, capacity: 30)
-        belazes.append(disielCummins)
+        let belaz7544 = Belaz(name: "7544", imageName: "7544.jpg", type: .disielCummins, capacity: 30, isChoose: false)
+        belazes.append(belaz7544)
 
-        let disielMTU = Belaz(name: "7545", imageName: "7545.jpg", type: .disielMTU, capacity: 35)
-        belazes.append(disielMTU)
+        let belaz7545 = Belaz(name: "7545", imageName: "7545.jpg", type: .disielMTU, capacity: 35, isChoose: false)
+        belazes.append(belaz7545)
 
-        let disielMTU2 = Belaz(name: "7547", imageName: "7547.jpg", type: .disielMTU, capacity: 35)
-        belazes.append(disielMTU2)
+        let belaz7547 = Belaz(name: "7547", imageName: "7547.jpg", type: .disielMTU, capacity: 40, isChoose: false)
+        belazes.append(belaz7547)
+        
+        let belaz7555 = Belaz(name: "7555", imageName: "7555.jpg", type: .disielCummins, capacity: 55, isChoose: false)
+        belazes.append(belaz7555)
     }
 
 }

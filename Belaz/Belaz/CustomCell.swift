@@ -35,10 +35,10 @@ class CustomCell: UITableViewCell {
             return
         }
 
-        thubnailImageView.image = belaz.image
         nameLabel.text = belaz.name
         typeLabel.text = belaz.type.rawValue
         capacityLabel.text = "\(belaz.capacity)"
+        thubnailImageView.image = UIImage(named: belaz.imageName)
     }
 
 }
