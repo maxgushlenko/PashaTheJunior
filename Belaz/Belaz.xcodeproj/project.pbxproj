@@ -13,6 +13,7 @@
 		D24FF8AD22835E4200B88999 /* BelazTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24FF8AC22835E4200B88999 /* BelazTableViewController.xib */; };
 		D24FF8AF22835F9A00B88999 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24FF8AE22835F9A00B88999 /* DetailViewController.xib */; };
 		D2519A8522688A5000F3AB1B /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2519A8422688A5000F3AB1B /* CustomCell.swift */; };
+		D2779B8022883537003AE274 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2779B7F22883537003AE274 /* CustomCell.xib */; };
 		D279C92D22675A2E00653643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C92C22675A2E00653643 /* AppDelegate.swift */; };
 		D279C93422675A2F00653643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D279C93322675A2F00653643 /* Assets.xcassets */; };
 		D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C93E22675AAC00653643 /* BelazTableViewController.swift */; };
@@ -25,6 +26,7 @@
 		D24FF8AC22835E4200B88999 /* BelazTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BelazTableViewController.xib; sourceTree = "<group>"; };
 		D24FF8AE22835F9A00B88999 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D2519A8422688A5000F3AB1B /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		D2779B7F22883537003AE274 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		D279C92922675A2E00653643 /* Belaz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Belaz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D279C92C22675A2E00653643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D279C93322675A2F00653643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 				D24FF8A8228353B000B88999 /* DetailViewController.swift */,
 				D24FF8AE22835F9A00B88999 /* DetailViewController.xib */,
 				D2519A8422688A5000F3AB1B /* CustomCell.swift */,
+				D2779B7F22883537003AE274 /* CustomCell.xib */,
 			);
 			path = "View Controller's";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				D279C93422675A2F00653643 /* Assets.xcassets in Resources */,
 				D24FF8AD22835E4200B88999 /* BelazTableViewController.xib in Resources */,
+				D2779B8022883537003AE274 /* CustomCell.xib in Resources */,
 				D24FF8AF22835F9A00B88999 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

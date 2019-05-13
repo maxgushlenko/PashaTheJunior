@@ -20,6 +20,8 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title  = "Detail Info"
+        
         // Do any additional setup after loading the view.
         
         guard let belaz = belaz else { return }
@@ -29,7 +31,6 @@ class DetailViewController: UIViewController {
         typeLabel.text = belaz.type.rawValue
         capacityLabel.text = "\(belaz.capacity)"
     }
-    
     
 
     /*

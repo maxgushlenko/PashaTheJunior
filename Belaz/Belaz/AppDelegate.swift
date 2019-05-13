@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        let navigationViewController = UINavigationController(rootViewController: BelazTableViewController())
+        
         window = UIWindow(frame: UIScreen.main.bounds)
-        window!.rootViewController = BelazTableViewController()
+        window!.rootViewController = navigationViewController
         window!.makeKeyAndVisible()
         
         _ = DataManager.shared

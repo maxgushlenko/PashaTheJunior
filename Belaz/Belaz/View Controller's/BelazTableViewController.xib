@@ -12,24 +12,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BelazTableViewController" customModule="Belaz" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="iN0-l3-epB" id="tFv-nf-EtD"/>
+                <outlet property="tableView" destination="oxN-UT-QJP" id="S8D-eY-Eih"/>
+                <outlet property="view" destination="awz-Wq-hIb" id="ZXY-OH-jsi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="awz-Wq-hIb">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fl-BP-kpZ">
-                    <rect key="frame" x="166" y="302" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oxN-UT-QJP">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="lzy-sd-lXX"/>
+                        <outlet property="delegate" destination="-1" id="zme-9v-ToW"/>
+                    </connections>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="oxN-UT-QJP" firstAttribute="leading" secondItem="wrG-uy-eL3" secondAttribute="leading" id="AOZ-K4-3ps"/>
+                <constraint firstItem="oxN-UT-QJP" firstAttribute="bottom" secondItem="wrG-uy-eL3" secondAttribute="bottom" id="CA7-gt-VYb"/>
+                <constraint firstItem="oxN-UT-QJP" firstAttribute="top" secondItem="wrG-uy-eL3" secondAttribute="top" id="Qah-UJ-Yda"/>
+                <constraint firstItem="oxN-UT-QJP" firstAttribute="trailing" secondItem="wrG-uy-eL3" secondAttribute="trailing" id="nMT-GP-Cbe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="wrG-uy-eL3"/>
+            <point key="canvasLocation" x="1484" y="-860.41979010494754"/>
         </view>
     </objects>
 </document>
