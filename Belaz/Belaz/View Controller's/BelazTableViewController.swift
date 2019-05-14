@@ -14,14 +14,21 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
     
     var belazes: [Belaz] = DataManager.shared.belazes
     
+    @objc func openScreen() {
+        let addViewController = AddViewController()
+        guard let navigationViewController = self.navigationController else { return }
+        navigationViewController.pushViewController(addViewController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let trainingCellNib = UINib(nibName: "CustomCell", bundle: nil)
         tableView.register(trainingCellNib, forCellReuseIdentifier: "CustomCell")
-        
+
         self.navigationItem.title = "Belaz List"
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openScreen))
+    
     }
     
     
@@ -109,28 +116,28 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
 ////        self.present(optionMenu, animated: true , completion: nil)
 //    }
 //    
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        
-//        //Share
-//        
-//        let shareAction = UITableViewRowAction(style: .default, title: "Поделится", handler: { (action, indexPath) -> Void in
-//        let defaultText = "Белаз " + self.belazes[indexPath.row].name
-//        let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-//            self.present(activityController , animated: true, completion: nil)
-//        })
-//        
-//        //Delete
-//        
-//        let deleteAction = UITableViewRowAction(style: .default, title: "Удалить", handler: {(acin, indexPath) -> Void in
-//            self.belazes.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//            })
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        //Share
+        
+        let shareAction = UITableViewRowAction(style: .default, title: "Поделится", handler: { (action, indexPath) -> Void in
+        let defaultText = "Белаз " + self.belazes[indexPath.row].name
+        let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            self.present(activityController , animated: true, completion: nil)
+        })
+        
+        //Delete
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Удалить", handler: {(acin, indexPath) -> Void in
+            self.belazes.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            })
+
+        shareAction.backgroundColor = .blue
+        
+        return [deleteAction]
+    }
 //
-//        shareAction.backgroundColor = .blue
-//        
-//        return [shareAction, deleteAction]
-//    }
-//    
 //    override func  prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            if let indexPath = tableView.indexPathForSelectedRow {

@@ -34,7 +34,7 @@ final class DataManager: NSObject {
 
         let belaz7547 = Belaz(name: "7547", imageName: "7547.jpg", type: .disielMTU, capacity: 40, isChoose: false)
         belazes.append(belaz7547)
-        
+
         let belaz7555 = Belaz(name: "7555", imageName: "7555.jpg", type: .disielCummins, capacity: 55, isChoose: false)
         belazes.append(belaz7555)
     }

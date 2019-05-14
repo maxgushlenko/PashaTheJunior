@@ -17,6 +17,8 @@
 		D279C92D22675A2E00653643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C92C22675A2E00653643 /* AppDelegate.swift */; };
 		D279C93422675A2F00653643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D279C93322675A2F00653643 /* Assets.xcassets */; };
 		D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C93E22675AAC00653643 /* BelazTableViewController.swift */; };
+		D2F881472289AE2600A0BBBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F881452289AE2600A0BBBA /* AddViewController.swift */; };
+		D2F881482289AE2600A0BBBA /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F881462289AE2600A0BBBA /* AddViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D279C93322675A2F00653643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D279C93822675A2F00653643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D279C93E22675AAC00653643 /* BelazTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelazTableViewController.swift; sourceTree = "<group>"; };
+		D2F881452289AE2600A0BBBA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		D2F881462289AE2600A0BBBA /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 				D24FF8AE22835F9A00B88999 /* DetailViewController.xib */,
 				D2519A8422688A5000F3AB1B /* CustomCell.swift */,
 				D2779B7F22883537003AE274 /* CustomCell.xib */,
+				D2F881452289AE2600A0BBBA /* AddViewController.swift */,
+				D2F881462289AE2600A0BBBA /* AddViewController.xib */,
 			);
 			path = "View Controller's";
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 			files = (
 				D279C93422675A2F00653643 /* Assets.xcassets in Resources */,
 				D24FF8AD22835E4200B88999 /* BelazTableViewController.xib in Resources */,
+				D2F881482289AE2600A0BBBA /* AddViewController.xib in Resources */,
 				D2779B8022883537003AE274 /* CustomCell.xib in Resources */,
 				D24FF8AF22835F9A00B88999 /* DetailViewController.xib in Resources */,
 			);
@@ -169,6 +176,7 @@
 			files = (
 				0F0E53C522797C500063E85A /* Belaz.swift in Sources */,
 				0F0E53C722797E560063E85A /* DataManager.swift in Sources */,
+				D2F881472289AE2600A0BBBA /* AddViewController.swift in Sources */,
 				D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */,
 				D24FF8A9228353B000B88999 /* DetailViewController.swift in Sources */,
 				D2519A8522688A5000F3AB1B /* CustomCell.swift in Sources */,
