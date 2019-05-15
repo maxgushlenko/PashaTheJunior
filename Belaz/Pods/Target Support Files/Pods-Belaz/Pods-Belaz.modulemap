@@ -1,0 +1,6 @@
+framework module Pods_Belaz {
+  umbrella header "Pods-Belaz-umbrella.h"
+
+  export *
+  module * { export * }
+}
