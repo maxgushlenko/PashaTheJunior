@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet var addImage: UIImageView!
     @IBOutlet var addNameTextField: UITextField!
@@ -55,11 +55,15 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addImageView))
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addObject))
+        let selectImage = UITapGestureRecognizer(target: self, action: #selector(addImageView))
+        addImage.isUserInteractionEnabled = true
+        addImage.addGestureRecognizer(selectImage)
         
+        self.addNameTextField.delegate = self
+        self.addTypeTextField.delegate = self
+        self.addCapacityTextField.delegate = self
         self.navigationItem.title = "AddView"
-        self.navigationItem.rightBarButtonItems = [saveButton, addButton]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addObject))
         
         // Do any additional setup after loading the view.
     }
@@ -71,6 +75,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         
         dismiss(animated: true, completion: nil)
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     

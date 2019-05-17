@@ -27,9 +27,11 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
         let trainingCellNib = UINib(nibName: "CustomCell", bundle: nil)
         tableView.register(trainingCellNib, forCellReuseIdentifier: "CustomCell")
         
-        self.navigationItem.title = "Belaz List"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openScreen))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openScreen))
+        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         
+        self.navigationItem.title = "Belaz List"
+        self.navigationItem.rightBarButtonItems = [addButton, searchButton]
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,8 +86,6 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         })
-        
-        shareAction.backgroundColor = .blue
         
         return [deleteAction]
     }

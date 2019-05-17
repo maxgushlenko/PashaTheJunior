@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="Belaz" customModuleProvider="target">
             <connections>
-                <outlet property="addCapacityTextField" destination="MXO-ic-W1M" id="Ve1-KG-TkT"/>
+                <outlet property="addCapacityTextField" destination="o2m-JJ-2Qk" id="BUq-pv-93U"/>
                 <outlet property="addImage" destination="CDx-UG-3Ck" id="yG5-BP-qVq"/>
-                <outlet property="addNameTextField" destination="UtO-YI-v6A" id="69R-MM-eFV"/>
-                <outlet property="addTypeTextField" destination="lT7-SJ-f3N" id="I2z-H4-bFW"/>
+                <outlet property="addNameTextField" destination="sZE-Ff-Nw4" id="xZS-2L-bcl"/>
+                <outlet property="addTypeTextField" destination="PwX-TH-h0T" id="ral-Kf-roX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,49 +24,54 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o2G-Cu-vGr">
-                    <rect key="frame" x="16" y="363.5" width="171.5" height="77.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clo-2N-c0V">
-                            <rect key="frame" x="0.0" y="0.0" width="171.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJ1-R4-FDT">
-                            <rect key="frame" x="0.0" y="28.5" width="171.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capcity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwW-g3-ZiD">
-                            <rect key="frame" x="0.0" y="57" width="171.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-UG-3Ck">
                     <rect key="frame" x="16" y="20" width="343" height="333.5"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-30-ogT">
-                    <rect key="frame" x="187.5" y="363.5" width="171.5" height="77.5"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C9h-lA-U5i">
+                    <rect key="frame" x="16" y="369.5" width="343" height="20.5"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Belaz Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UtO-YI-v6A">
-                            <rect key="frame" x="0.0" y="0.0" width="171.5" height="27.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3f-os-9Aw">
+                            <rect key="frame" x="0.0" y="0.0" width="167.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZE-Ff-Nw4">
+                            <rect key="frame" x="175.5" y="0.0" width="167.5" height="20.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Belaz Engine Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-SJ-f3N">
-                            <rect key="frame" x="0.0" y="35.5" width="171.5" height="17"/>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-Jn-w9R">
+                    <rect key="frame" x="16" y="406" width="343" height="20.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TYPE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-Os-gfK">
+                            <rect key="frame" x="0.0" y="0.0" width="167.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwX-TH-h0T">
+                            <rect key="frame" x="175.5" y="0.0" width="167.5" height="20.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Belaz Capacity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MXO-ic-W1M">
-                            <rect key="frame" x="0.0" y="60.5" width="171.5" height="17"/>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VKh-Ey-qan">
+                    <rect key="frame" x="16" y="442.5" width="343" height="20.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAPACITY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEK-gJ-hHD">
+                            <rect key="frame" x="0.0" y="0.0" width="167.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Capacity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o2m-JJ-2Qk">
+                            <rect key="frame" x="175.5" y="0.0" width="167.5" height="20.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -76,17 +81,19 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Azh-30-ogT" firstAttribute="width" secondItem="o2G-Cu-vGr" secondAttribute="width" id="86T-Zq-KcF"/>
-                <constraint firstItem="CDx-UG-3Ck" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="Gi2-OI-ddr"/>
-                <constraint firstItem="o2G-Cu-vGr" firstAttribute="top" secondItem="CDx-UG-3Ck" secondAttribute="bottom" constant="10" id="IpI-rD-fkc"/>
-                <constraint firstItem="o2G-Cu-vGr" firstAttribute="width" secondItem="CDx-UG-3Ck" secondAttribute="width" multiplier="0.5" id="O74-TJ-qDq"/>
-                <constraint firstItem="o2G-Cu-vGr" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Vj5-Ku-i6W"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Azh-30-ogT" secondAttribute="trailing" constant="16" id="Wyu-rI-oK9"/>
-                <constraint firstItem="CDx-UG-3Ck" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ayO-rA-0qu"/>
-                <constraint firstItem="Azh-30-ogT" firstAttribute="top" secondItem="CDx-UG-3Ck" secondAttribute="bottom" constant="10" id="lfx-wS-GNg"/>
-                <constraint firstItem="Azh-30-ogT" firstAttribute="height" secondItem="o2G-Cu-vGr" secondAttribute="height" id="piS-ig-JNE"/>
-                <constraint firstItem="CDx-UG-3Ck" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yNf-I8-Yd6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CDx-UG-3Ck" secondAttribute="trailing" constant="16" id="zUZ-ZL-mC9"/>
+                <constraint firstItem="Rdf-Jn-w9R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0NB-dJ-5AA"/>
+                <constraint firstItem="VKh-Ey-qan" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="13y-Ig-9iA"/>
+                <constraint firstItem="CDx-UG-3Ck" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C8g-cC-Pzy"/>
+                <constraint firstItem="Rdf-Jn-w9R" firstAttribute="top" secondItem="C9h-lA-U5i" secondAttribute="bottom" constant="16" id="JtK-Xm-KwP"/>
+                <constraint firstItem="C9h-lA-U5i" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="MzV-jJ-khA"/>
+                <constraint firstItem="CDx-UG-3Ck" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="Ok9-Oc-2n3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CDx-UG-3Ck" secondAttribute="trailing" constant="16" id="RLp-M9-8gq"/>
+                <constraint firstItem="CDx-UG-3Ck" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="fUr-44-LZ4"/>
+                <constraint firstItem="C9h-lA-U5i" firstAttribute="top" secondItem="CDx-UG-3Ck" secondAttribute="bottom" constant="16" id="iyU-Ot-iFp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C9h-lA-U5i" secondAttribute="trailing" constant="16" id="kqu-83-9jk"/>
+                <constraint firstItem="VKh-Ey-qan" firstAttribute="top" secondItem="Rdf-Jn-w9R" secondAttribute="bottom" constant="16" id="qHN-bh-sDE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VKh-Ey-qan" secondAttribute="trailing" constant="16" id="t6C-i4-tyK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Rdf-Jn-w9R" secondAttribute="trailing" constant="16" id="vsA-vU-vDT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
