@@ -1,15 +1,16 @@
 //
-//  Belaz.swift
+//  BelazRealm.swift
 //  Belaz
 //
-//  Created by Maksim Gushlenko on 5/1/19.
+//  Created by Pavel Tsiareschcanka on 5/15/19.
 //  Copyright © 2019 Pavel Tsiareschcanka. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import RealmSwift
 
 enum BelazType: String {
-
+    
     case disielYamz = "Disiel Yamz"
     case disielCummins = "Disiel Cummins"
     case disielMTU = "Disiel MTU"
@@ -20,22 +21,18 @@ enum BelazType: String {
     case generalElectric = "General electric"
 }
 
-class Belaz: NSObject {
+class Belaz: Object {
     
-    var name = ""
-    var image: UIImage = UIImage()
-    var type: BelazType = .disielYamz
-    var capacity: Int = 0
-    var isChoose = false
-
-    init(name: String, imageName: String, type: BelazType, capacity: Int, isChoose: Bool) {
-        super.init()
-
-        self.name = name
-        self.image = UIImage(named: imageName)!
-        self.type = type
-        self.capacity = capacity
-        self.isChoose = isChoose
+    var image: UIImage {
+        get {
+            guard let data = self.imageData else { return UIImage() }
+            return UIImage(data: data) ?? UIImage()
+        }
     }
+    
+    @objc dynamic var name = ""
+    @objc dynamic var imageData: Data?
+    @objc dynamic var type = ""
+    @objc dynamic var capacity = ""
+    
 }
-

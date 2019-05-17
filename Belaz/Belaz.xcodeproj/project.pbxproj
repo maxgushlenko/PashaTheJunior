@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F0E53C522797C500063E85A /* Belaz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E53C422797C500063E85A /* Belaz.swift */; };
 		0F0E53C722797E560063E85A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E53C622797E560063E85A /* DataManager.swift */; };
 		148BB5CD61210B11205332B4 /* Pods_Belaz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569C4C64C01C54D504469B65 /* Pods_Belaz.framework */; };
 		D24FF8A9228353B000B88999 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FF8A8228353B000B88999 /* DetailViewController.swift */; };
@@ -18,13 +17,12 @@
 		D279C92D22675A2E00653643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C92C22675A2E00653643 /* AppDelegate.swift */; };
 		D279C93422675A2F00653643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D279C93322675A2F00653643 /* Assets.xcassets */; };
 		D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279C93E22675AAC00653643 /* BelazTableViewController.swift */; };
-		D2D56EAE228C330200D6C9A8 /* BelazRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D56EAD228C330200D6C9A8 /* BelazRealm.swift */; };
+		D2D56EAE228C330200D6C9A8 /* Belaz.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D56EAD228C330200D6C9A8 /* Belaz.swift */; };
 		D2F881472289AE2600A0BBBA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F881452289AE2600A0BBBA /* AddViewController.swift */; };
 		D2F881482289AE2600A0BBBA /* AddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F881462289AE2600A0BBBA /* AddViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0F0E53C422797C500063E85A /* Belaz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Belaz.swift; sourceTree = "<group>"; };
 		0F0E53C622797E560063E85A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		389F92A24171C777C177BEFF /* Pods-Belaz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belaz.release.xcconfig"; path = "Target Support Files/Pods-Belaz/Pods-Belaz.release.xcconfig"; sourceTree = "<group>"; };
 		569C4C64C01C54D504469B65 /* Pods_Belaz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Belaz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +36,7 @@
 		D279C93322675A2F00653643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D279C93822675A2F00653643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D279C93E22675AAC00653643 /* BelazTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelazTableViewController.swift; sourceTree = "<group>"; };
-		D2D56EAD228C330200D6C9A8 /* BelazRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BelazRealm.swift; sourceTree = "<group>"; };
+		D2D56EAD228C330200D6C9A8 /* Belaz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Belaz.swift; sourceTree = "<group>"; };
 		D2F881452289AE2600A0BBBA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D2F881462289AE2600A0BBBA /* AddViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddViewController.xib; sourceTree = "<group>"; };
 		F43F40013E98D55F9842D341 /* Pods-Belaz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belaz.debug.xcconfig"; path = "Target Support Files/Pods-Belaz/Pods-Belaz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,8 +89,7 @@
 		D24FF8B122835FE700B88999 /* Model's */ = {
 			isa = PBXGroup;
 			children = (
-				0F0E53C422797C500063E85A /* Belaz.swift */,
-				D2D56EAD228C330200D6C9A8 /* BelazRealm.swift */,
+				D2D56EAD228C330200D6C9A8 /* Belaz.swift */,
 				0F0E53C622797E560063E85A /* DataManager.swift */,
 			);
 			path = "Model's";
@@ -252,9 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F0E53C522797C500063E85A /* Belaz.swift in Sources */,
 				0F0E53C722797E560063E85A /* DataManager.swift in Sources */,
-				D2D56EAE228C330200D6C9A8 /* BelazRealm.swift in Sources */,
+				D2D56EAE228C330200D6C9A8 /* Belaz.swift in Sources */,
 				D2F881472289AE2600A0BBBA /* AddViewController.swift in Sources */,
 				D279C93F22675AAC00653643 /* BelazTableViewController.swift in Sources */,
 				D24FF8A9228353B000B88999 /* DetailViewController.swift in Sources */,

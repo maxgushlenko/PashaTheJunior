@@ -7,36 +7,72 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class DataManager: NSObject {
 
     static let shared = DataManager()
-
+    
+    var belazes: [Belaz] {
+        get {
+            let realm = try! Realm()
+            
+            return Array(realm.objects(Belaz.self))
+        }
+    }
+    
     override init() {
         super.init()
-
-        createBelazData()
+        
+        //        createBelazData()
+    }
+    
+    func add(belaz: Belaz) {
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(belaz)
+        }
+    }
+    
+    func delete(belaz: Belaz) {
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.delete(belaz)
+        }
     }
 
-    var belazes: [Belaz]!
+//    private func createBelazData() {
+//        belazes = []
+//
+//        let belaz7540 = BelazRealm()
+//        let image = UIImage(named: "7544")!
+//
+//
+//        belaz7540.name = "7540"
+//        belaz7540.imageData = image.pngData()! as NSData
+//        belaz7540.type = "Disiel"
+//        belaz7540.capacity = "20"
+//
+//        belazes.append(belaz7540)
+    
+//        let belaz7540 = Belaz(name: "7540", imageName: "7540.jpg", type: .disielYamz, capacity: 20, isChoose: false)
+//        belazes.append(belaz7540)
 
-    private func createBelazData() {
-        belazes = []
+//        let belaz7544 = Belaz(name: "7544", imageName: "7544.jpg", type: .disielCummins, capacity: 30, isChoose: false)
+//        belazes.append(belaz7544)
 
-        let belaz7540 = Belaz(name: "7540", imageName: "7540.jpg", type: .disielYamz, capacity: 20, isChoose: false)
-        belazes.append(belaz7540)
-
-        let belaz7544 = Belaz(name: "7544", imageName: "7544.jpg", type: .disielCummins, capacity: 30, isChoose: false)
-        belazes.append(belaz7544)
-
-        let belaz7545 = Belaz(name: "7545", imageName: "7545.jpg", type: .disielMTU, capacity: 35, isChoose: false)
-        belazes.append(belaz7545)
-
-        let belaz7547 = Belaz(name: "7547", imageName: "7547.jpg", type: .disielMTU, capacity: 40, isChoose: false)
-        belazes.append(belaz7547)
-
-        let belaz7555 = Belaz(name: "7555", imageName: "7555.jpg", type: .disielCummins, capacity: 55, isChoose: false)
-        belazes.append(belaz7555)
-    }
+//        let belaz7545 = Belaz(name: "7545", imageName: "7545.jpg", type: .disielMTU, capacity: 35, isChoose: false)
+//        belazes.append(belaz7545)
+//
+//        let belaz7547 = Belaz(name: "7547", imageName: "7547.jpg", type: .disielMTU, capacity: 40, isChoose: false)
+//        belazes.append(belaz7547)
+//
+//        let belaz7555 = Belaz(name: "7555", imageName: "7555.jpg", type: .disielCummins, capacity: 55, isChoose: false)
+//        belazes.append(belaz7555)
+//    }
 
 }

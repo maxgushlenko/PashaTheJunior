@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddViewController" customModule="Belaz" customModuleProvider="target">
             <connections>
-                <outlet property="addCapcityTextField" destination="MXO-ic-W1M" id="Ve1-KG-TkT"/>
+                <outlet property="addCapacityTextField" destination="MXO-ic-W1M" id="Ve1-KG-TkT"/>
                 <outlet property="addImage" destination="CDx-UG-3Ck" id="yG5-BP-qVq"/>
                 <outlet property="addNameTextField" destination="UtO-YI-v6A" id="69R-MM-eFV"/>
                 <outlet property="addTypeTextField" destination="lT7-SJ-f3N" id="I2z-H4-bFW"/>
