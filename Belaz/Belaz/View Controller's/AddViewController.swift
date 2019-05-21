@@ -50,6 +50,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         newBelaz.type = type
         newBelaz.capacity = capacity
         DataManager.shared.add(belaz: newBelaz)
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
