@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var belazImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!

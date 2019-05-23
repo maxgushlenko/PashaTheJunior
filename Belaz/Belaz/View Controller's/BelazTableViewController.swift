@@ -15,10 +15,10 @@
  +alerts,action sheets
  +app lifecycle methods
  +scroll view
+ +drawing  
  
  -mvc
  -oop, architectures
- -drawing
  - multithreading
  -error handling
  - animations
