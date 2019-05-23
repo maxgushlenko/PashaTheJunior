@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.rootViewController = navigationViewController
         window!.makeKeyAndVisible()
+        navigationViewController.navigationBar.tintColor = .black
+        navigationViewController.navigationBar.prefersLargeTitles = true
         
         _ = DataManager.shared
 

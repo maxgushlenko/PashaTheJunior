@@ -73,15 +73,23 @@
                         </label>
                     </subviews>
                 </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axe-Sk-Sc9" customClass="DrawView" customModule="Belaz" customModuleProvider="target">
+                    <rect key="frame" x="16" y="455" width="343" height="192"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="axe-Sk-Sc9" firstAttribute="top" secondItem="Tim-X0-PPa" secondAttribute="bottom" constant="16" id="Ehs-AY-GzC"/>
+                <constraint firstItem="axe-Sk-Sc9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Fw0-Se-Yht"/>
                 <constraint firstItem="Xnv-o8-xue" firstAttribute="width" secondItem="EpF-1n-Wce" secondAttribute="width" multiplier="0.5" id="J0S-hX-A79"/>
                 <constraint firstItem="Tim-X0-PPa" firstAttribute="top" secondItem="EpF-1n-Wce" secondAttribute="bottom" constant="8" id="KxQ-ck-vW4"/>
                 <constraint firstItem="Tim-X0-PPa" firstAttribute="width" secondItem="Xnv-o8-xue" secondAttribute="width" id="R11-cL-Rnv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EpF-1n-Wce" secondAttribute="trailing" constant="16" id="Wgb-0q-peQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="axe-Sk-Sc9" secondAttribute="bottom" constant="20" id="Zui-51-Jww"/>
                 <constraint firstItem="EpF-1n-Wce" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eaQ-Rg-vUD"/>
                 <constraint firstItem="Xnv-o8-xue" firstAttribute="top" secondItem="EpF-1n-Wce" secondAttribute="bottom" constant="8" id="gIf-4y-jG5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="axe-Sk-Sc9" secondAttribute="trailing" constant="16" id="k2L-Kn-gEh"/>
                 <constraint firstItem="Xnv-o8-xue" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="kLc-T9-ZvT"/>
                 <constraint firstItem="EpF-1n-Wce" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="pJi-de-7Xa"/>
                 <constraint firstItem="EpF-1n-Wce" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="w08-vQ-kVQ"/>

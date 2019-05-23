@@ -50,7 +50,6 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         newBelaz.type = type
         newBelaz.capacity = capacity
         DataManager.shared.add(belaz: newBelaz)
-        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -63,7 +62,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.addNameTextField.delegate = self
         self.addTypeTextField.delegate = self
         self.addCapacityTextField.delegate = self
-        self.navigationItem.title = "AddView"
+        self.navigationItem.title = "Add Belaz"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addObject))
         
         // Do any additional setup after loading the view.

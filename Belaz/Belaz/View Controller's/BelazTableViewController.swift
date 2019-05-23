@@ -5,6 +5,26 @@
 //  Created by Pavel Tsiareschcanka on 4/17/19.
 //  Copyright © 2019 Pavel Tsiareschcanka. All rights reserved.
 //
+/*
+ + gestures
+ +realm
+ +-segues
+ +table views
+ +protocols,extensions,deleation
+ +autolayout
+ +alerts,action sheets
+ +app lifecycle methods
+ +scroll view
+ 
+ -mvc
+ -oop, architectures
+ -drawing
+ - multithreading
+ -error handling
+ - animations
+ -timer
+ -notification centre
+ */
 
 import UIKit
 import RealmSwift
