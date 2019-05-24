@@ -28,10 +28,10 @@ class DrawView: UIView {
         return CGPoint(x: bounds.midX + (bounds.midX/7), y: bounds.midY - (3 * (bounds.midY/4)))
     }
     var forwardPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((5 * bounds.midX)/7), y: bounds.midY - (3 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX + ((6 * bounds.midX)/7), y: bounds.midY - (3 * (bounds.midY/4)))
     }
     var secondForwardPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((5 * bounds.midX)/7), y: bounds.midY - (bounds.midY/2))
+        return CGPoint(x: bounds.midX + ((6 * bounds.midX)/7), y: bounds.midY - (bounds.midY/2))
     }
     var downPoint: CGPoint {
         return CGPoint(x: bounds.midX + ((2 * bounds.midX)/7), y: bounds.midY - (bounds.midY/2))
@@ -54,10 +54,10 @@ class DrawView: UIView {
     //CABIN
     
     var firstCabinPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((3.7 * bounds.midX)/7), y: bounds.midY)
+        return CGPoint(x: bounds.midX + ((4.2 * bounds.midX)/7), y: bounds.midY)
     }
     var secondCabinPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((3 * bounds.midX)/7), y: bounds.midY - (1.5 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX + ((3.5 * bounds.midX)/7), y: bounds.midY - (1.5 * (bounds.midY/4)))
     }
     var thirdCabinPoint: CGPoint {
         return CGPoint(x: bounds.midX + ((2 * bounds.midX)/7), y: bounds.midY - (1.5 * (bounds.midY/4)))
@@ -65,29 +65,38 @@ class DrawView: UIView {
     var fourCabinPoint: CGPoint {
         return CGPoint(x: bounds.midX + ((2 * bounds.midX)/7), y: bounds.midY)
     }
-    var fiveCabinPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((5 * bounds.midX)/7), y: bounds.midY)
+    
+    //BUMPER
+    
+    var firstBumperPoint: CGPoint {
+        return CGPoint(x: bounds.midX + ((4.2 * bounds.midX)/7), y: bounds.midY)
     }
-    var sixCabinPoint: CGPoint {
+    var secondBumperPoint: CGPoint {
+        return CGPoint(x: bounds.midX + ((6 * bounds.midX)/7), y: bounds.midY)
+    }
+    var thirdBumperPoint: CGPoint {
+        return CGPoint(x: bounds.midX + ((6 * bounds.midX)/7), y: bounds.midY + (3 * (bounds.midY/4)))
+    }
+    var fourBumperPoint: CGPoint {
         return CGPoint(x: bounds.midX + ((5 * bounds.midX)/7), y: bounds.midY + (3 * (bounds.midY/4)))
     }
-    var sevenCabinPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((4 * bounds.midX)/7), y: bounds.midY)
+    var fiveBumperPoint: CGPoint {
+        return CGPoint(x: bounds.midX + ((5 * bounds.midX)/7), y: bounds.midY + (1 * (bounds.midY/4)))
     }
     
     //GAS TANK
     
     var firstTankPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((1.5 * bounds.midX)/7), y: bounds.midY + (1 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX + (bounds.midX/7), y: bounds.midY + (1 * (bounds.midY/4)))
     }
     var secondTankPoint: CGPoint {
-        return CGPoint(x: bounds.midX + ((1.5 * bounds.midX)/7), y: bounds.midY + (3 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX + (bounds.midX/7), y: bounds.midY + (3 * (bounds.midY/4)))
     }
     var thirdTankPoint: CGPoint {
-        return CGPoint(x: bounds.midX - ((2.5 * bounds.midX)/7), y: bounds.midY + (3 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX - ((1.9 * bounds.midX)/7), y: bounds.midY + (3 * (bounds.midY/4)))
     }
     var fourTankPoint: CGPoint {
-        return CGPoint(x: bounds.midX - ((2.5 * bounds.midX)/7), y: bounds.midY + (1 * (bounds.midY/4)))
+        return CGPoint(x: bounds.midX - ((1.9 * bounds.midX)/7), y: bounds.midY + (1 * (bounds.midY/4)))
     }
     
     //PATH FOR BODY
@@ -122,7 +131,7 @@ class DrawView: UIView {
     func pathForForwardWheel() -> UIBezierPath {
         let line = UIBezierPath()
         line.lineWidth = 2
-        line.addArc(withCenter: centerForwardWheel, radius: height / 4.2, startAngle: 0, endAngle:  2 * CGFloat.pi, clockwise: true)
+        line.addArc(withCenter: centerForwardWheel, radius: height / 4.3, startAngle: 0, endAngle:  2 * CGFloat.pi, clockwise: true)
         return line
     }
     
@@ -135,9 +144,24 @@ class DrawView: UIView {
         line.addLine(to: secondCabinPoint)
         line.addLine(to: thirdCabinPoint)
         line.addLine(to: fourCabinPoint)
-        line.addLine(to: fiveCabinPoint)
-        line.addLine(to: sixCabinPoint)
-        line.addLine(to: sevenCabinPoint)
+        line.addLine(to: firstCabinPoint)
+//        line.addLine(to: sixCabinPoint)
+//        line.addLine(to: sevenCabinPoint)
+        
+        return line
+    }
+    
+    //PATH FOR BUMPER
+    
+    func pathForBumper() -> UIBezierPath {
+        let line = UIBezierPath()
+        line.lineWidth = 2
+        line.move(to: firstBumperPoint)
+        line.addLine(to: secondBumperPoint)
+        line.addLine(to: thirdBumperPoint)
+        line.addLine(to: fourBumperPoint)
+        line.addLine(to: fiveBumperPoint)
+        line.addLine(to: firstBumperPoint)
         
         return line
     }
@@ -159,9 +183,12 @@ class DrawView: UIView {
     override func draw(_ rect: CGRect) {
         
         UIColor.black.setStroke()
-        UIColor.green.setFill()
+        UIColor.yellow.setFill()
         pathForBody().stroke()
         pathForBody().fill()
+        pathForBumper().stroke()
+        pathForBumper().fill()
+        UIColor.blue.setFill()
         pathForCabin().stroke()
         pathForCabin().fill()
         pathForTank().stroke()

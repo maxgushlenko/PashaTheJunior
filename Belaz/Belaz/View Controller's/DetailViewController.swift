@@ -11,6 +11,7 @@ import RealmSwift
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet var ratingImage: UIImageView!
     @IBOutlet var belazImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
@@ -27,12 +28,32 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         guard let belaz = belaz else { return }
         
+        let ratingImageGesture = UITapGestureRecognizer(target: self, action: #selector(openRating))
+        ratingImage.isUserInteractionEnabled = true
+        ratingImage.addGestureRecognizer(ratingImageGesture)
+        ratingImage.backgroundColor = .green
+        ratingImage.layer.cornerRadius = ratingImage.frame.height / 2
+        
         belazImageView.image = belaz.image
         nameLabel.text = belaz.name
         typeLabel.text = belaz.type
         capacityLabel.text = "\(belaz.capacity)"
+        ratingImage.image = Rating(rawValue: belaz.rating)?.image
+        
     }
     
+    @objc func openRating() {
+        let ratingViewController = RateViewController()
+        guard let navigationViewController = self.navigationController else { return }
+        navigationViewController.pushViewController(ratingViewController, animated: true)
+        ratingViewController.callback = { (pressedRating) in
+            let realm = try! Realm()
+            try! realm.write {
+                self.belaz?.rating = pressedRating.rawValue
+                self.ratingImage.image = Rating(rawValue: self.belaz!.rating)?.image
+            }
+        }
+    }
     
     /*
      // MARK: - Navigation

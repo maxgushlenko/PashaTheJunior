@@ -22,5 +22,6 @@ class Belaz: Object {
     @objc dynamic var imageData: Data?
     @objc dynamic var type = ""
     @objc dynamic var capacity = ""
+    @objc dynamic var rating = Rating.notRated.rawValue
     
 }

@@ -15,15 +15,16 @@
  +alerts,action sheets
  +app lifecycle methods
  +scroll view
- +drawing  
+ +drawing
+ +animation
  
  -mvc
  -oop, architectures
  - multithreading
  -error handling
- - animations
- -timer
- -notification centre
+ 
+ *timer
+ *notification centre
  */
 
 import UIKit

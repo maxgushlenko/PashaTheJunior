@@ -50,6 +50,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         newBelaz.type = type
         newBelaz.capacity = capacity
         DataManager.shared.add(belaz: newBelaz)
+        
+        guard let navigationViewController = self.navigationController else { return }
+        navigationViewController.popViewController(animated: true)
     }
     
     override func viewDidLoad() {

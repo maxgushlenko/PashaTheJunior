@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0F0E53C722797E560063E85A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0E53C622797E560063E85A /* DataManager.swift */; };
 		148BB5CD61210B11205332B4 /* Pods_Belaz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569C4C64C01C54D504469B65 /* Pods_Belaz.framework */; };
+		D20C60DD22984B1A005B1C23 /* RateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C60DB22984B1A005B1C23 /* RateViewController.swift */; };
+		D20C60DE22984B1A005B1C23 /* RateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20C60DC22984B1A005B1C23 /* RateViewController.xib */; };
+		D20C60E022986E27005B1C23 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C60DF22986E27005B1C23 /* Rating.swift */; };
 		D2261F712296D8E800A83C0B /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2261F702296D8E800A83C0B /* DrawView.swift */; };
 		D24FF8A9228353B000B88999 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24FF8A8228353B000B88999 /* DetailViewController.swift */; };
 		D24FF8AD22835E4200B88999 /* BelazTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D24FF8AC22835E4200B88999 /* BelazTableViewController.xib */; };
@@ -27,6 +30,9 @@
 		0F0E53C622797E560063E85A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		389F92A24171C777C177BEFF /* Pods-Belaz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Belaz.release.xcconfig"; path = "Target Support Files/Pods-Belaz/Pods-Belaz.release.xcconfig"; sourceTree = "<group>"; };
 		569C4C64C01C54D504469B65 /* Pods_Belaz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Belaz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20C60DB22984B1A005B1C23 /* RateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateViewController.swift; sourceTree = "<group>"; };
+		D20C60DC22984B1A005B1C23 /* RateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateViewController.xib; sourceTree = "<group>"; };
+		D20C60DF22986E27005B1C23 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		D2261F702296D8E800A83C0B /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		D24FF8A8228353B000B88999 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D24FF8AC22835E4200B88999 /* BelazTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BelazTableViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +87,8 @@
 				D2261F702296D8E800A83C0B /* DrawView.swift */,
 				D24FF8A8228353B000B88999 /* DetailViewController.swift */,
 				D24FF8AE22835F9A00B88999 /* DetailViewController.xib */,
+				D20C60DB22984B1A005B1C23 /* RateViewController.swift */,
+				D20C60DC22984B1A005B1C23 /* RateViewController.xib */,
 				D2519A8422688A5000F3AB1B /* CustomCell.swift */,
 				D2779B7F22883537003AE274 /* CustomCell.xib */,
 				D2F881452289AE2600A0BBBA /* AddViewController.swift */,
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D2D56EAD228C330200D6C9A8 /* Belaz.swift */,
+				D20C60DF22986E27005B1C23 /* Rating.swift */,
 				0F0E53C622797E560063E85A /* DataManager.swift */,
 			);
 			path = "Model's";
@@ -188,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20C60DE22984B1A005B1C23 /* RateViewController.xib in Resources */,
 				D279C93422675A2F00653643 /* Assets.xcassets in Resources */,
 				D24FF8AD22835E4200B88999 /* BelazTableViewController.xib in Resources */,
 				D2F881482289AE2600A0BBBA /* AddViewController.xib in Resources */,
@@ -252,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D20C60DD22984B1A005B1C23 /* RateViewController.swift in Sources */,
 				0F0E53C722797E560063E85A /* DataManager.swift in Sources */,
+				D20C60E022986E27005B1C23 /* Rating.swift in Sources */,
 				D2D56EAE228C330200D6C9A8 /* Belaz.swift in Sources */,
 				D2261F712296D8E800A83C0B /* DrawView.swift in Sources */,
 				D2F881472289AE2600A0BBBA /* AddViewController.swift in Sources */,
