@@ -24,12 +24,16 @@ class CustomCell: UITableViewCell {
         }
     }
     
+    // MARK: - Lifecycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         thubnailImageView.layer.cornerRadius = 30.0
         thubnailImageView.clipsToBounds = true
     }
+    
+    // MARK: - 
     
     func updateUI() {
         guard let belaz = belaz else {

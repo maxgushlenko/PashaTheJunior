@@ -36,11 +36,7 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
     
     var belazes: [Belaz] = []
     
-    @objc func openScreen() {
-        let addViewController = AddViewController()
-        guard let navigationViewController = self.navigationController else { return }
-        navigationViewController.pushViewController(addViewController, animated: true)
-    }
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +54,16 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        belazes = DataManager.shared.belazes
+        belazes = DataManager().belazes
         tableView.reloadData()
+    }
+    
+    // MARK: - 
+    
+    @objc func openScreen() {
+        let addViewController = AddViewController()
+        guard let navigationViewController = self.navigationController else { return }
+        navigationViewController.pushViewController(addViewController, animated: true)
     }
     
     // MARK: - Table view data source
@@ -102,8 +106,8 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
         //Delete
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action, indexPath) -> Void in
-            DataManager.shared.delete(belaz: self.belazes[indexPath.row])
-            self.belazes = DataManager.shared.belazes
+            DataManager().delete(belaz: self.belazes[indexPath.row])
+            self.belazes = DataManager().belazes
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         })

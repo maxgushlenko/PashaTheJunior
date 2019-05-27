@@ -23,8 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         navigationViewController.navigationBar.tintColor = .black
         navigationViewController.navigationBar.prefersLargeTitles = true
-        
-        _ = DataManager.shared
 
         return true
     }

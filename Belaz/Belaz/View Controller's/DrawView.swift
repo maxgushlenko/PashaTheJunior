@@ -99,6 +99,7 @@ class DrawView: UIView {
         return CGPoint(x: bounds.midX - ((1.9 * bounds.midX)/7), y: bounds.midY + (1 * (bounds.midY/4)))
     }
     
+    // MARK: -
     //PATH FOR BODY
     
     func pathForBody() -> UIBezierPath {
@@ -145,8 +146,6 @@ class DrawView: UIView {
         line.addLine(to: thirdCabinPoint)
         line.addLine(to: fourCabinPoint)
         line.addLine(to: firstCabinPoint)
-//        line.addLine(to: sixCabinPoint)
-//        line.addLine(to: sevenCabinPoint)
         
         return line
     }

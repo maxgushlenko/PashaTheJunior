@@ -19,6 +19,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     var belaz: Belaz?
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,6 +44,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    // MARK: - 
+    
     @objc func openRating() {
         let ratingViewController = RateViewController()
         guard let navigationViewController = self.navigationController else { return }
@@ -54,15 +58,5 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

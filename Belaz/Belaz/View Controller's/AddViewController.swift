@@ -16,7 +16,27 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet var addTypeTextField: UITextField!
     @IBOutlet var addCapacityTextField: UITextField!
     
-    @objc func addImageView() {
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let selectImage = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+        addImage.isUserInteractionEnabled = true
+        addImage.addGestureRecognizer(selectImage)
+        
+        self.addNameTextField.delegate = self
+        self.addTypeTextField.delegate = self
+        self.addCapacityTextField.delegate = self
+        self.navigationItem.title = "Add Belaz"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addObject))
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - 
+    
+    @objc func showImagePicker() {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             
             let imagePicker = UIImagePickerController()
@@ -49,27 +69,17 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         newBelaz.name = name
         newBelaz.type = type
         newBelaz.capacity = capacity
-        DataManager.shared.add(belaz: newBelaz)
         
-        guard let navigationViewController = self.navigationController else { return }
-        navigationViewController.popViewController(animated: true)
+        DispatchQueue.global().async {
+            DataManager().add(belaz: newBelaz)
+            DispatchQueue.main.async {
+                guard let navigationViewController = self.navigationController else { return }
+                navigationViewController.popViewController(animated: true)
+            }
+        }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let selectImage = UITapGestureRecognizer(target: self, action: #selector(addImageView))
-        addImage.isUserInteractionEnabled = true
-        addImage.addGestureRecognizer(selectImage)
-        
-        self.addNameTextField.delegate = self
-        self.addTypeTextField.delegate = self
-        self.addCapacityTextField.delegate = self
-        self.navigationItem.title = "Add Belaz"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(addObject))
-        
-        // Do any additional setup after loading the view.
-    }
+    // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         addImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
@@ -77,23 +87,12 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         addImage.clipsToBounds = true
         
         dismiss(animated: true, completion: nil)
-        
     }
+    
+    // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
