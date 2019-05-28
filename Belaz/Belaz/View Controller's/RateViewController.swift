@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RateViewController: UIViewController {
     
@@ -15,9 +16,9 @@ class RateViewController: UIViewController {
     @IBOutlet var badImage: UIButton!
     @IBOutlet var goodImage: UIButton!
     @IBOutlet var greatImage: UIButton!
-    
-    var callback: ((Rating)->())?
-    
+
+    var belaz: Belaz?
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -54,13 +55,12 @@ class RateViewController: UIViewController {
     // MARK: - 
     
     @IBAction func rateSelect(sender: UIButton) {
-        switch sender.tag {
-        case 1: callback?(Rating.bad)
-//        case 2: callback?(Rating(rawValue: sender.tag)!)
-        case 2: callback?(Rating.good)
-        case 3: callback?(Rating.great)
-        default: break
+        let realm = try! Realm()
+        try! realm.write {
+            belaz?.rating = sender.tag
         }
+
         navigationController?.popViewController(animated: true)
     }
+    
 }

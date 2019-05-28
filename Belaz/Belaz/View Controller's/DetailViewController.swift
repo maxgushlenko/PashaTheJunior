@@ -10,23 +10,47 @@ import UIKit
 import RealmSwift
 
 class DetailViewController: UIViewController, UIScrollViewDelegate {
-    
+
+    deinit {
+        notificationToken?.invalidate()
+    }
+
     @IBOutlet var ratingImage: UIImageView!
     @IBOutlet var belazImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var capacityLabel: UILabel!
     
-    var belaz: Belaz?
-    
+    @objc var belaz: Belaz?
+    var notificationToken: NotificationToken?
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title  = "Detail Info"
-        
-        // Do any additional setup after loading the view.
+
+        notificationToken = belaz?.observe({ [weak self] (change) in
+            guard
+                let self = self,
+                let belaz = self.belaz
+                else { return }
+
+            switch change {
+            case .change(let properties):
+                for property in properties {
+                    if property.name == #keyPath(Belaz.rating) {
+                        self.ratingImage.image = Rating(rawValue: belaz.rating)?.image
+                    }
+                }
+            case .deleted, .error(_):
+                break
+            }
+        })
+
+        /*
+         */
         
         guard let belaz = belaz else { return }
         
@@ -48,15 +72,10 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func openRating() {
         let ratingViewController = RateViewController()
+        ratingViewController.belaz = belaz
+
         guard let navigationViewController = self.navigationController else { return }
         navigationViewController.pushViewController(ratingViewController, animated: true)
-        ratingViewController.callback = { (pressedRating) in
-            let realm = try! Realm()
-            try! realm.write {
-                self.belaz?.rating = pressedRating.rawValue
-                self.ratingImage.image = Rating(rawValue: self.belaz!.rating)?.image
-            }
-        }
     }
     
 }

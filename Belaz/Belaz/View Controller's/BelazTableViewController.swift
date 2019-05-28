@@ -35,11 +35,24 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var tableView: UITableView!
     
     var belazes: [Belaz] = []
-    
+    var notificationToken: NotificationToken?
+
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let realm = try! Realm()
+        let belazesRealmResult = realm.objects(Belaz.self)
+        notificationToken = belazesRealmResult.observe { [weak self] (changes) in
+            guard let self = self else { return }
+
+            self.belazes = DataManager().belazes
+            self.tableView.reloadData()
+        }
+
+        /*
+         */
         
         let trainingCellNib = UINib(nibName: "CustomCell", bundle: nil)
         tableView.register(trainingCellNib, forCellReuseIdentifier: "CustomCell")
@@ -49,13 +62,6 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
         
         self.navigationItem.title = "Belaz List"
         self.navigationItem.rightBarButtonItems = [addButton]
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        belazes = DataManager().belazes
-        tableView.reloadData()
     }
     
     // MARK: - 
@@ -107,9 +113,6 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action, indexPath) -> Void in
             DataManager().delete(belaz: self.belazes[indexPath.row])
-            self.belazes = DataManager().belazes
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
         })
         
         return [deleteAction]
