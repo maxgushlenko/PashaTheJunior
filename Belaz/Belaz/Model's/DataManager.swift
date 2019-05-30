@@ -9,6 +9,17 @@
 import UIKit
 import RealmSwift
 
+enum RealmError: Error {
+    case cantWriteObject
+    
+    var description: String {
+        switch self {
+        case .cantWriteObject:
+            return "Image is to big"
+        }
+    }
+}
+
 class DataManager: NSObject {
     
     var belazes: [Belaz] {
@@ -19,13 +30,16 @@ class DataManager: NSObject {
         }
     }
     
-    func add(belaz: Belaz) {
+    func add(belaz: Belaz) throws {
+        
+        guard belaz.isImageDataAllowedRealm() else {
+            throw RealmError.cantWriteObject
+        }
         
         let realm = try! Realm()
-        
-        try! realm.write {
+        try realm.write({
             realm.add(belaz)
-        }
+        })
     }
     
     func delete(belaz: Belaz) {

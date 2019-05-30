@@ -5,27 +5,6 @@
 //  Created by Pavel Tsiareschcanka on 4/17/19.
 //  Copyright © 2019 Pavel Tsiareschcanka. All rights reserved.
 //
-/*
- + gestures
- +realm
- +-segues
- +table views
- +protocols,extensions,deleation
- +autolayout
- +alerts,action sheets
- +app lifecycle methods
- +scroll view
- +drawing
- +animation
- 
- -mvc
- -oop, architectures
- - multithreading
- -error handling
- 
- *timer
- *notification centre
- */
 
 import UIKit
 import RealmSwift
@@ -54,11 +33,10 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
         /*
          */
         
-        let trainingCellNib = UINib(nibName: "CustomCell", bundle: nil)
-        tableView.register(trainingCellNib, forCellReuseIdentifier: "CustomCell")
+        let belazCellNib = UINib(nibName: "CustomCell", bundle: nil)
+        tableView.register(belazCellNib, forCellReuseIdentifier: "CustomCell")
         
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(openScreen))
-//        let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: nil)
         
         self.navigationItem.title = "Belaz List"
         self.navigationItem.rightBarButtonItems = [addButton]
@@ -100,14 +78,6 @@ class BelazTableViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        //Share
-        
-//        let shareAction = UITableViewRowAction(style: .default, title: "Share", handler: { (action, indexPath) -> Void in
-//            let defaultText = "Belaz " + self.belazes[indexPath.row].name
-//            let activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
-//            self.present(activityController , animated: true, completion: nil)
-//        })
         
         //Delete
         

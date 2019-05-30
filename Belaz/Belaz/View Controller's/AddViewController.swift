@@ -21,6 +21,14 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (param) in
+            self.view.frame.origin.y = -200
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (param) in
+            self.view.frame.origin.y = 0.0
+        }
+        
         let selectImage = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
         addImage.isUserInteractionEnabled = true
         addImage.addGestureRecognizer(selectImage)
@@ -71,10 +79,22 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         newBelaz.capacity = capacity
         
         DispatchQueue.global().async {
-            DataManager().add(belaz: newBelaz)
-            DispatchQueue.main.async {
-                guard let navigationViewController = self.navigationController else { return }
-                navigationViewController.popViewController(animated: true)
+            do {
+                try DataManager().add(belaz: newBelaz)
+                DispatchQueue.main.async {
+                    guard let navigationViewController = self.navigationController else { return }
+                    navigationViewController.popViewController(animated: true)
+                }
+            } catch {
+                if  error is RealmError,
+                    let error = error as? RealmError
+                {
+                    DispatchQueue.main.async {
+                        let errorAlert = UIAlertController(title: "Error", message: error.description, preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                }
             }
         }
     }

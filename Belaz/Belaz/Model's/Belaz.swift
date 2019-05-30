@@ -25,3 +25,19 @@ class Belaz: Object {
     @objc dynamic var rating = Rating.notRated.rawValue
     
 }
+
+extension Belaz {
+    
+    func isImageDataAllowedRealm() -> Bool {
+        
+        let maxRealmImageDataBytes = 15 * 1024 * 1024
+        
+        guard
+            let imageData = image.pngData(),
+            imageData.count < maxRealmImageDataBytes else {
+                return false
+        }
+        
+        return true
+    }
+}
